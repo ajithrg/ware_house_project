@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: StoreSync Web Application
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/warehouse_database?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  logging:
+    level:
+      root: INFO
+      com.yourpackage: DEBUG  # Enable DEBUG level logging for your package
+    pattern:
+      console: '%d{yyyy-MM-dd HH:mm:ss} - %msg%n'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+
+server:
+  port: 8090
